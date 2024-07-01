@@ -13,3 +13,28 @@ function callToPhone(phone: string | number): number {
 }
 
 console.log(`String: ${callToPhone("23")}, Number: ${callToPhone(13)}`);
+
+
+interface Ipessoainha {
+  id: string | number,
+  name: string,
+  SayMyName: () => string;
+}
+
+class Pessoa implements Ipessoainha {
+  id: string | number;
+  name: string;
+
+  constructor(id: string | number, name: string) {
+    this.id = id;
+    this.name = name;
+  }
+
+  public SayMyName(): string {
+    return `Nome: ${this.name}; Identificação: ${this.id};`;
+  }
+}
+
+const OtimaPessoa = new Pessoa('1', 'Brenno');
+
+console.log(OtimaPessoa.SayMyName())
